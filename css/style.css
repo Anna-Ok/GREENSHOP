@@ -1,0 +1,157 @@
+body {
+    font-family: "Cera Pro", sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.modal {
+    background: #ffffff;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+    width: 300px;
+}
+
+.tab {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 16px;
+    text-decoration: none;
+    color: #3d3d3d;
+    padding: 0 20px;
+}
+
+.tabs .tab:first-child {
+    border-right: 1px solid #3d3d3d;
+}
+
+.tab.active {
+    color: #46a358;
+    pointer-events: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-text {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    margin: 0;
+    width: 300px;
+    color: #3d3d3d;
+}
+
+input {
+    border: 1px solid #eaeaea;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 40px;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #bdbdbd;
+}
+
+input:focus {
+    border-color: #46a358;
+    outline: none;
+}
+
+.password {
+    position: relative;
+    width: 300px;
+}
+
+.password input {
+    width: 100%;
+}
+
+.eye {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.register-btn {
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background: #46a358;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.register-btn:hover {
+    background: #3d8e4d;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 16px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: #3d3d3d;
+    font-weight: 400;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: #eaeaea;
+}
+
+.divider-text {
+    padding: 0 8px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    background: #ffffff;
+    font-size: 13px;
+    color: #727272;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.social-btn:hover {
+    background: #f6f6f6;
+}

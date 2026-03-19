@@ -2,6 +2,21 @@
 
 /* Document
    ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin-top: 0;
+}
 
 /**
  * 1. Correct the line height in all browsers.

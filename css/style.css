@@ -9,7 +9,7 @@ html {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    margin: 0 16px;
+    padding: 0 16px;
 }
 
 .logo,
@@ -31,8 +31,9 @@ html {
 }
 
 .nav {
-    width: calc(100% - 250px);
+    width: calc(100% - 290px);
     font-size: 16px;
+    margin: 0 20px;
 }
 
 .menu {

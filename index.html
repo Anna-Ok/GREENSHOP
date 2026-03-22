@@ -3,9 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesso 04</title>
-    <link rel="styleheet" href="css/reset.css" />
-    <link rel="styleheet" href="css/style.css" />
+    <title>Greenshop</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo"><img src="img/logo.svg" alt="Logo" /></div>
+        <nav class="nav">
+            <ul class="menu">
+              <li><a href="#home" class="active">Home</a></li>
+              <li><a href="#shop">Shop</a></li>
+              <li><a href="#care">Plant Care</a></li>
+              <li><a href="#blog">Blogs</a></li>
+            </ul>
+        </nav>
+        <a href="login.html" class="button">
+          <img src="img/login.svg" alt="Login" />
+          <span>Login</span>
+        </a>
+      </header>
+      <main>
+        <section id="home" class="hero">
+          <div class="hero-left">
+            <p class="hero-subtitle">Welcome to GreenShop</p>
+
+            <h1 class="hero-title">
+              Let’s make a <br />
+              better <span>planet</span>
+            </h1>
+
+            <p class="hero-text">
+              We are an online plant shop offering a wide range of cheap and
+              trendy plants. Use our plants to create an unique Urban Jungle.
+              Order your favorite plants!
+            </p>
+
+            <a href="#" class="button">Shop now</a>
+          </div>
+
+          <div class="hero-right">
+            <img src="img/hero_img.png" alt="Plant" />
+          </div>
+        </section>
+        <section id="shop"></section>
+        <section id="care"></section>
+        <section id="blogs"></section>
+      </main>
+    </div>
+  </body>
 </html>

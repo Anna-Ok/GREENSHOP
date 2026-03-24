@@ -12,12 +12,12 @@
       <header class="header">
         <div class="logo"><img src="img/logo.svg" alt="Logo" /></div>
         <nav class="nav">
-            <ul class="menu">
-              <li><a href="#home" class="active">Home</a></li>
-              <li><a href="#shop">Shop</a></li>
-              <li><a href="#care">Plant Care</a></li>
-              <li><a href="#blog">Blogs</a></li>
-            </ul>
+          <ul class="menu">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#care">Plant Care</a></li>
+            <li><a href="#blog">Blogs</a></li>
+          </ul>
         </nav>
         <a href="login.html" class="button">
           <img src="img/login.svg" alt="Login" />
@@ -47,7 +47,70 @@
             <img src="img/hero_img.png" alt="Plant" />
           </div>
         </section>
-        <section id="shop"></section>
+        <section class="shop clearfix">
+          <aside class="shop-sidebar">
+            <div class="shop-container">
+              <h3 class="sidebar-title">Categories</h3>
+
+              <ul class="categories-list">
+                <li><a href="#" class="active">House Plants</a></li>
+                <li><a href="#">Potter Plants</a></li>
+                <li><a href="#">Seeds</a></li>
+                <li><a href="#">Small Plants</a></li>
+                <li><a href="#">Big Plants</a></li>
+                <li><a href="#">Succulents</a></li>
+                <li><a href="#">Terrariums</a></li>
+                <li><a href="#">Gardening</a></li>
+                <li><a href="#">Accessories</a></li>
+              </ul>
+            </div>
+
+            <a href="#">
+              <img
+                class="banner"
+                src="img/banner.png"
+                alt="Super Sale banner"
+              />
+            </a>
+          </aside>
+
+          <section class="shop-products">
+            <div class="shop-top clearfix">
+              <ul class="shop-tabs">
+                <li><a href="#" class="active">All Plants</a></li>
+                <li><a href="#">New Arrivals</a></li>
+                <li><a href="#">Sale</a></li>
+              </ul>
+
+              <div class="shop-sort">
+                <span>Sort by:</span>
+
+                <button class="sort-button">
+                  Default sorting
+                  <img src="img/arrow_down.svg" alt="Open sorting" />
+                </button>
+              </div>
+            </div>
+
+            <div class="products-list clearfix">
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="img/shot_item.png" alt="Angel Wing Begonia" />
+                </div>
+                <h4 class="product-title">Angel Wing Begonia</h4>
+                <p class="product-price">$169.00</p>
+              </div>
+            </div>
+
+            <ul class="pagination clearfix">
+              <li><a href="#" class="active">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">&gt;</a></li>
+            </ul>
+          </section>
+        </section>
         <section id="care"></section>
         <section id="blogs"></section>
       </main>

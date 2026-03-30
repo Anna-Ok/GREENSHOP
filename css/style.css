@@ -119,8 +119,8 @@ body {
 }
 
 .blog-section {
-    margin-top: 120px;
-    margin-bottom: 120px;
+    margin-top: 140px;
+    margin-bottom: 140px;
 }
 
 .blog-heading {
@@ -160,20 +160,20 @@ body {
 }
 
 .blog-content {
-    padding: 9px 15px 12px;
+    padding: 12px;
 }
 
 .blog-meta {
-    margin: 0 0 4px;
     font-size: 14px;
-    line-height: 16px;
     font-weight: 500;
+    line-height: 16px;
     color: #46a358;
+    white-space: nowrap;
+    margin-bottom: 4px;
 }
 
 .blog-meta span {
     color: #46a358;
-    margin: 0 4px;
 }
 
 .blog-card-title {
@@ -185,34 +185,32 @@ body {
 }
 
 .blog-text {
-    margin: 0 0 9px;
+    margin: 0 0 10px;
     font-size: 14px;
     line-height: 22px;
     color: #727272;
 }
 
 .blog-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     text-decoration: none;
     font-size: 14px;
     line-height: 16px;
     font-weight: 500;
     color: #3d3d3d;
-    position: relative;
-    padding-right: 16px;
+}
+
+.blog-link img {
+    width: 14px;
+    height: 14px;
+    display: block;
 }
 
 .blog-link:hover {
     color: #46a358;
 }
-
-.blog-link::after {
-    content: "→";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
 
 .header {
     display: flex;

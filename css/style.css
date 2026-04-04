@@ -365,10 +365,13 @@ body {
     flex-direction: column;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .shop-container {
     padding: 24px;
+    top: 80px;
+    position: sticky;
 }
 
 .sidebar-title {
@@ -408,10 +411,13 @@ body {
 .banner {
     display: block;
     width: 100%;
+    position: sticky;
+    z-index: 100;
 }
 
 .shop-products {
     flex-grow: 1;
+    position: relative;
 }
 
 .shop-top {
@@ -420,6 +426,10 @@ body {
     align-items: center;
     margin-bottom: 32px;
     gap: 20px;
+    position: sticky;
+    top: 100px;
+    background: #fff;
+    z-index: 10;
 }
 
 .shop-tabs {
@@ -508,11 +518,7 @@ body {
 .product-image {
     position: relative;
     background-color: #fbfbfb;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 12px;
-    min-height: 300px;
 }
 
 .product-image::before {
@@ -529,7 +535,7 @@ body {
 
 .product-actions {
     position: absolute;
-    bottom: 8;
+    bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -538,7 +544,7 @@ body {
     transition: opacity 0.2s ease;
 }
 
-.action-btn {
+.action-button {
     width: 34px;
     height: 34px;
     background-color: #ffffff;
@@ -563,7 +569,7 @@ body {
     opacity: 1;
 }
 
-.action-btn:hover .icon {
+.action-button:hover .icon {
     fill: #46a358;
 }
 

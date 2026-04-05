@@ -521,6 +521,19 @@ body {
     margin-bottom: 12px;
 }
 
+.product-badge {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    background-color: #46a358;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+
+    padding: 7px 10px;
+}
+
 .product-image::before {
     content: "";
     position: absolute;

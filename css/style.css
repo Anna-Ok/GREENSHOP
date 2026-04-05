@@ -256,7 +256,6 @@ body {
     font-size: 16px;
     color: #3d3d3d;
     text-decoration: none;
-    padding-bottom: 8px;
     border-bottom: 2px solid transparent;
     transition: color 0.2s ease;
 }
@@ -276,7 +275,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -8px;
+    bottom: -26px;
 }
 
 .submenu {
@@ -286,6 +285,7 @@ body {
     min-width: 200px;
     background: #edf6ee;
     display: none;
+    margin-top: 20px;
 }
 
 .second-submenu {
@@ -329,11 +329,13 @@ body {
     top: 50%;
     transform: translateY(-50%);
     transition: color 0.2s ease;
+    opacity: 0;
 }
 
 .submenu a:hover .arrow,
 .second-submenu a:hover .arrow {
     color: #ffffff;
+    opacity: 1;
 }
 
 .button {

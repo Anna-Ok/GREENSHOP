@@ -203,47 +203,66 @@ body {
     color: #46a358;
 }
 
+.menu,
+.submenu,
+.second-submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    max-width: 1200px;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
-    margin: 32px auto 0;
+    max-width: 1200px;
     display: flex;
     align-items: center;
-    padding-bottom: 10px;
+    padding-bottom: 16px;
     border-bottom: 0.5px solid rgba(70, 163, 89, 0.309);
-    background-color: #fff;
+    background-color: #ffffff;
     z-index: 100;
 }
 
 .nav {
     flex-grow: 1;
-    font-size: 16px;
     margin: 0 20px;
+    font-size: 16px;
 }
 
 .menu {
-    text-align: center;
     display: flex;
-    gap: 40px;
     justify-content: center;
+    gap: 40px;
 }
 
-.menu li {
-    display: inline-block;
-}
-
-.menu a {
+.menu>li {
     position: relative;
+}
+
+.menu>li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    bottom: -20px;
+}
+
+.menu>li>a {
+    display: inline-block;
     font-size: 16px;
     color: #3d3d3d;
     text-decoration: none;
-    display: inline-block;
+    padding-bottom: 8px;
     border-bottom: 2px solid transparent;
     transition: color 0.2s ease;
+}
+
+.menu>li>a:hover {
+    color: #46a358;
 }
 
 .menu a.active {
@@ -257,12 +276,64 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -28px;
-    pointer-events: none;
+    bottom: -8px;
 }
 
-.menu a:not(.active):hover {
-    color: #46a358;
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background: #edf6ee;
+    display: none;
+}
+
+.second-submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+    background: #edf6ee;
+    display: none;
+}
+
+.menu li:hover>.submenu {
+    display: block;
+}
+
+.submenu li:hover>.second-submenu {
+    display: block;
+}
+
+.submenu a,
+.second-submenu a {
+    display: block;
+    width: 100%;
+    padding: 12px 40px 12px 20px;
+    text-decoration: none;
+    color: #3d3d3d;
+    position: relative;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+.submenu a:hover,
+.second-submenu a:hover {
+    background: #46a358;
+    color: #ffffff;
+}
+
+.arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: color 0.2s ease;
+}
+
+.submenu a:hover .arrow,
+.second-submenu a:hover .arrow {
+    color: #ffffff;
 }
 
 .button {
@@ -530,7 +601,6 @@ body {
     font-size: 16px;
     line-height: 16px;
     font-weight: 500;
-
     padding: 7px 10px;
 }
 

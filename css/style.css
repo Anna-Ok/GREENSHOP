@@ -248,10 +248,11 @@ body {
     left: 0;
     right: 0;
     height: 20px;
-    bottom: -20px;
+    bottom: -24px;
 }
 
 .menu>li>a {
+    position: relative;
     display: inline-block;
     font-size: 16px;
     color: #3d3d3d;
@@ -260,28 +261,29 @@ body {
     transition: color 0.2s ease;
 }
 
-.menu>li>a:hover {
+.menu>li:hover>a {
     color: #46a358;
 }
 
-.menu a.active {
+.menu>li>a.active {
     font-weight: 700;
 }
 
-.menu a.active::after {
+.menu>li>a.active::after {
     content: '';
-    height: 2px;
-    background: #46a358;
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -26px;
+    bottom: -28px;
+    height: 2px;
+    background: #46a358;
 }
 
 .submenu {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     min-width: 200px;
     background: #edf6ee;
     display: none;
@@ -291,17 +293,32 @@ body {
 .second-submenu {
     position: absolute;
     top: 0;
-    left: 100%;
+    left: calc(100% + 2px);
     min-width: 200px;
     background: #edf6ee;
     display: none;
 }
 
-.menu li:hover>.submenu {
+.menu>li:hover>.submenu,
+.menu>li>.submenu:hover {
     display: block;
 }
 
-.submenu li:hover>.second-submenu {
+.submenu li {
+    position: relative;
+}
+
+.submenu li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 2px;
+    height: 100%;
+}
+
+.submenu li:hover>.second-submenu,
+.submenu li>.second-submenu:hover {
     display: block;
 }
 
@@ -314,13 +331,14 @@ body {
     color: #3d3d3d;
     position: relative;
     box-sizing: border-box;
-    transition: 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
 }
 
-.submenu a:hover,
-.second-submenu a:hover {
+.submenu li:hover>a,
+.second-submenu li:hover>a {
     background: #46a358;
     color: #ffffff;
+    font-weight: 700;
 }
 
 .arrow {
@@ -328,14 +346,32 @@ body {
     right: 14px;
     top: 50%;
     transform: translateY(-50%);
-    transition: color 0.2s ease;
-    opacity: 0;
+    color: #727272;
+    display: none;
 }
 
-.submenu a:hover .arrow,
-.second-submenu a:hover .arrow {
+.arrow-icon {
+    display: block;
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.submenu li:is(:has(.second-submenu))>a .arrow {
+    display: block;
+}
+
+.submenu li:hover>a .arrow,
+.second-submenu li:hover>a .arrow {
     color: #ffffff;
-    opacity: 1;
+}
+
+.submenu li:hover>a .arrow-icon,
+.second-submenu li:hover>a .arrow-icon {
+    transform: rotate(0deg);
 }
 
 .button {

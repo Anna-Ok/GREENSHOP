@@ -203,66 +203,175 @@ body {
     color: #46a358;
 }
 
+.menu,
+.submenu,
+.second-submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    max-width: 1200px;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
-    margin: 32px auto 0;
+    max-width: 1200px;
     display: flex;
     align-items: center;
-    padding-bottom: 10px;
+    padding-bottom: 16px;
     border-bottom: 0.5px solid rgba(70, 163, 89, 0.309);
-    background-color: #fff;
+    background-color: #ffffff;
     z-index: 100;
 }
 
 .nav {
     flex-grow: 1;
-    font-size: 16px;
     margin: 0 20px;
+    font-size: 16px;
 }
 
 .menu {
-    text-align: center;
     display: flex;
-    gap: 40px;
     justify-content: center;
+    gap: 40px;
 }
 
-.menu li {
-    display: inline-block;
-}
-
-.menu a {
+.menu>li {
     position: relative;
+}
+
+.menu>li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 20px;
+    bottom: -24px;
+}
+
+.menu>li>a {
+    position: relative;
+    display: inline-block;
     font-size: 16px;
     color: #3d3d3d;
     text-decoration: none;
-    display: inline-block;
     border-bottom: 2px solid transparent;
     transition: color 0.2s ease;
 }
 
-.menu a.active {
+.menu>li:hover>a {
+    color: #46a358;
+}
+
+.menu>li>a.active {
     font-weight: 700;
 }
 
-.menu a.active::after {
+.menu>li>a.active::after {
     content: '';
-    height: 2px;
-    background: #46a358;
     position: absolute;
     left: 0;
     right: 0;
     bottom: -28px;
-    pointer-events: none;
+    height: 2px;
+    background: #46a358;
 }
 
-.menu a:not(.active):hover {
-    color: #46a358;
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    background: #edf6ee;
+    display: none;
+    margin-top: 20px;
+}
+
+.second-submenu {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 2px);
+    min-width: 200px;
+    background: #edf6ee;
+    display: none;
+}
+
+.menu>li:hover>.submenu,
+.menu>li>.submenu:hover {
+    display: block;
+}
+
+.submenu li {
+    position: relative;
+}
+
+.submenu li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 2px;
+    height: 100%;
+}
+
+.submenu li:hover>.second-submenu,
+.submenu li>.second-submenu:hover {
+    display: block;
+}
+
+.submenu a,
+.second-submenu a {
+    display: block;
+    width: 100%;
+    padding: 12px 40px 12px 20px;
+    text-decoration: none;
+    color: #3d3d3d;
+    position: relative;
+    box-sizing: border-box;
+    transition: background 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+}
+
+.submenu li:hover>a,
+.second-submenu li:hover>a {
+    background: #46a358;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #727272;
+    display: none;
+}
+
+.arrow-icon {
+    display: block;
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.submenu li:is(:has(.second-submenu))>a .arrow {
+    display: block;
+}
+
+.submenu li:hover>a .arrow,
+.second-submenu li:hover>a .arrow {
+    color: #ffffff;
+}
+
+.submenu li:hover>a .arrow-icon,
+.second-submenu li:hover>a .arrow-icon {
+    transform: rotate(0deg);
 }
 
 .button {
@@ -530,7 +639,6 @@ body {
     font-size: 16px;
     line-height: 16px;
     font-weight: 500;
-
     padding: 7px 10px;
 }
 

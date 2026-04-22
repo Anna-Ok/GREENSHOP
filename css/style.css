@@ -931,58 +931,63 @@ input:focus {
     list-style: none;
 }
 
+.footer-features {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 .feature-item {
     position: relative;
     flex: 0 1 204px;
+    padding-top: 99px;
 }
 
 .feature-item+.feature-item {
     margin-left: 30px;
     padding-left: 30px;
+    border-left: 1px solid rgba(70, 163, 88, 0.1);
 }
 
-.feature-item+.feature-item::before {
+.feature-item>* {
+    position: relative;
+    z-index: 2;
+}
+
+.feature-item::before {
     content: '';
     position: absolute;
-    top: 6px;
-    left: 0;
-    width: 1px;
-    height: 187px;
-    background: rgba(70, 163, 88, 0.1);
-}
-
-.feature-image {
-    position: relative;
+    top: 0;
     width: 83px;
     height: 83px;
-    margin-bottom: 16px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     z-index: 1;
 }
 
-.feature-image::after {
+.feature-item::after {
     content: '';
     position: absolute;
     top: 16px;
-    left: 0;
     width: 74px;
     height: 74px;
     border-radius: 50%;
     background: rgba(70, 163, 88, 0.13);
-    z-index: -1;
+    z-index: 0;
 }
 
-.feature-image--care {
+.feature-item--care::before {
     background-image: url("../img/garden_сare.png");
 }
 
-.feature-image--renovation {
+.feature-item--renovation::before {
     background-image: url("../img/plant_renovation.png");
 }
 
-.feature-image--watering {
+.feature-item--watering::before {
     background-image: url("../img/watering_graden.png");
 }
 
@@ -1111,7 +1116,8 @@ input:focus {
 }
 
 .footer-column {
-    min-width: 140px;
+    width: 140px;
+    flex-shrink: 0;
 }
 
 .footer-column h3,
@@ -1134,6 +1140,7 @@ input:focus {
 .footer-column a {
     color: #3d3d3d;
     text-decoration: none;
+    overflow-wrap: break-word;
 }
 
 .footer-column a:hover {

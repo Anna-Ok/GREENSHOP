@@ -34,6 +34,50 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icons/icomoon.eot?dzgu69');
+    src:  url('../fonts/icons/icomoon.eot?dzgu69#iefix') format('embedded-opentype'),
+    url('../fonts/icons/icomoon.ttf?dzgu69') format('truetype'),
+    url('../fonts/icons/icomoon.woff?dzgu69') format('woff'),
+    url('../fonts/icons/icomoon.svg?dzgu69#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+    content: "\ea90";
+}
+
+.icon-instagram:before {
+    content: "\ea92";
+}
+
+.icon-twitter:before {
+    content: "\ea96";
+}
+
+.icon-linkedin:before {
+    content: "\eaca";
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -79,8 +123,8 @@ body {
     flex: 1;
     padding: 20px 20px 20px 32px;
     text-align: right;
+    min
 }
-
 
 .promo-title {
     margin: 0 0 9px;
@@ -302,19 +346,16 @@ body {
 .second-submenu {
     position: absolute;
     top: 0;
-    left: calc(100% + 2px);
+    bottom: 0;
+    left: 100%;
     min-width: 200px;
-    background: #edf6ee;
     display: none;
+    transform: translateX(2px);
 }
 
 .menu>li:hover>.submenu,
 .menu>li>.submenu:hover {
     display: block;
-}
-
-.submenu li {
-    position: relative;
 }
 
 .submenu li:hover>.second-submenu,
@@ -325,6 +366,7 @@ body {
 .submenu a,
 .second-submenu a {
     display: block;
+    background: #edf6ee;
     width: 100%;
     padding: 12px 40px 12px 20px;
     text-decoration: none;
@@ -621,26 +663,33 @@ body {
 
 .product-card {
     min-width: 180px;
-    flex-grow: 1;
-    flex-basis: 200px;
+    flex: 1 1 200px;
 }
 
 .product-image {
     position: relative;
-    background-color: #fbfbfb;
     margin-bottom: 12px;
+    background-color: #fbfbfb;
+    overflow: hidden;
+}
+
+.product-image>img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .product-badge {
     position: absolute;
     top: 14px;
     left: 0;
+    z-index: 2;
+    padding: 7px 10px;
     background-color: #46a358;
     color: #ffffff;
     font-size: 16px;
     line-height: 16px;
     font-weight: 500;
-    padding: 7px 10px;
 }
 
 .product-image::before {
@@ -648,6 +697,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 2;
     width: 100%;
     height: 2px;
     background-color: #46a358;
@@ -657,30 +707,37 @@ body {
 
 .product-actions {
     position: absolute;
-    bottom: 8px;
     left: 50%;
-    transform: translateX(-50%);
+    bottom: 12px;
+    z-index: 3;
     display: flex;
-    gap: 10px;
+    gap: 8px;
+    transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.2s ease;
 }
 
 .action-button {
-    width: 34px;
-    height: 34px;
-    background-color: #ffffff;
-    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .icon {
     width: 20px;
     height: 20px;
     fill: #3d3d3d;
-    transition: fill 0.2s ease;
+    transition: fill 0.25s ease;
+}
+
+.action-button:hover .icon {
+    fill: #46a358;
 }
 
 .product-card:hover .product-actions {
@@ -691,23 +748,19 @@ body {
     opacity: 1;
 }
 
-.action-button:hover .icon {
-    fill: #46a358;
-}
-
 .product-title {
+    margin: 0 0 6px;
+    color: #3d3d3d;
     font-size: 16px;
     line-height: 16px;
-    color: #3d3d3d;
-    margin: 0 0 6px;
 }
 
 .product-price {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 16px;
-    color: #46a358;
     margin: 0;
+    color: #46a358;
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: 700;
 }
 
 .pagination {
@@ -833,19 +886,32 @@ input:focus {
 }
 
 .password {
-    position: relative;
+    display: flex;
+    align-items: center;
     width: 300px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    transition: border-color 0.2s ease;
+}
+
+.password:focus-within {
+    border-color: #46a358;
 }
 
 .password input {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
 }
 
 .eye {
-    position: absolute;
-    right: 12px;
-
-    transform: translateY(-50%);
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    display: block;
+    cursor: pointer;
 }
 
 .register-button {
@@ -942,7 +1008,7 @@ input:focus {
 .feature-item {
     position: relative;
     flex: 0 1 204px;
-    padding-top: 99px;
+    padding-top: 104px;
 }
 
 .feature-item+.feature-item {
@@ -1039,7 +1105,7 @@ input:focus {
 .newsletter-input {
     flex: 1;
     min-width: 0;
-    border: none;
+    border: 1px solid #eaeaea;
     border-radius: 5px 0 0 5px;
 }
 
@@ -1091,11 +1157,17 @@ input:focus {
     color: #3d3d3d;
 }
 
-.footer-contact img {
+.footer-contact img,
+.footer-contact-icon {
     width: 20px;
     height: 20px;
     flex-shrink: 0;
     display: block;
+}
+
+.footer-contact-icon {
+    stroke: #46a358;
+    fill: none;
 }
 
 .footer-contact a {
@@ -1166,18 +1238,23 @@ input:focus {
     border: 1px solid rgba(70, 163, 88, 0.2);
     border-radius: 4px;
     color: #46a358;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    font-size: 16px;
+}
+
+.social-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    display: block;
+    flex-shrink: 0;
 }
 
 .social-list a:hover {
     background: #46a358;
     color: #ffffff;
     border-color: #46a358;
-}
-
-.social-list svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
 }
 
 .footer-copy {

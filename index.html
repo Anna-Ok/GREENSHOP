@@ -251,7 +251,7 @@
           </ul>
         </nav>
 
-        <a href="register.html" class="button">
+        <a href="register.html" class="button login-btn">
           <span class="arrow">
             <svg class="arrow-icon" aria-hidden="true"><use href="img/symbol-defs.svg#icon-arrow_left"></use></svg>
           </span>
@@ -685,6 +685,12 @@
             <button type="submit" class="button newsletter-button">Join</button>
           </form>
 
+          <label class="custom-checkbox">
+            <input type="checkbox" name="agree" />
+            <span class="custom-check-icon"></span>
+            I agree to the processing of personal data
+          </label>
+
           <p>
             We usually post offers and challenges in newsletter. We’re your
             online houseplant destination. We offer a wide range of houseplants
@@ -788,5 +794,20 @@
 
       <p class="footer-copy">© 2021 GreenShop. All Rights Reserved.</p>
     </footer>
+
+    <div class="loader_background loaded">
+      <span class="loader"></span>
+    </div>
+
+    <script>
+      document.querySelector(".login-btn").addEventListener("click", function (e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+        document.querySelector(".loader_background").classList.remove("loaded");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 1500);
+      });
+    </script>
   </body>
 </html>
